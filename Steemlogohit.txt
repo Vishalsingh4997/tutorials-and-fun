@@ -1,0 +1,36 @@
+Since the code is based on p5.js I recommend you to either use the code editor here:- https://editor.p5js.org/ or setup the environment!
+Code goes here:-
+
+let x,y,xspeed,yspeed;
+let steem;
+let counter = 0;
+
+
+function setup() {
+  createCanvas(620, 400);
+	x=320;
+	y=200;
+	xspeed=2;
+	yspeed=2;
+	steem = loadImage("steem1.png"); //setting path of png
+}
+
+function draw() {
+  background(1);
+	fill(256);
+	text("Steem Hits :-  "+counter, 10, 20); //setting text along with x,y positions
+
+	image(steem,x,y); //loading image
+	x = x + xspeed;
+	y = y + yspeed;
+	if(x + steem.width == width || x == 0){
+	xspeed = - xspeed;
+		counter=counter+1; //setting counter on hit
+		}
+	
+	if(y + steem.height == height || y == 0){
+		yspeed =  -yspeed;
+				counter=counter+1;
+
+				}
+}
